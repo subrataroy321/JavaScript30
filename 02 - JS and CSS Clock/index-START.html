@@ -7,7 +7,7 @@
 <body>
 
 
-    <div class="clock">
+    <div class="clock" style="transform: rotate(90deg)">
       <div class="clock-face">
         <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
@@ -62,12 +62,29 @@
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: 100%;
+
     }
 
   </style>
 
   <script>
 
+    setInterval(() => {
+      let now = new Date();
+      let second = now.getSeconds()
+      let minute = now.getMinutes()
+      let hour = now.getHours()
+      let rotateSecond = (second/60)*360;
+      let rotateMinute = (minute/60)*360;
+      let rotateHour = ((hour/24)*2)*360;
+      let secondHand = document.querySelector('.second-hand')
+      secondHand.style.transform = `rotate(${rotateSecond}deg)`;
+      let minuteHand = document.querySelector('.min-hand')
+      minuteHand.style.transform = `rotate(${rotateMinute}deg)`;
+      let hourHand = document.querySelector('.hour-hand')
+      hourHand.style.transform = `rotate(${rotateHour}deg)`;
+    }, 1000);
 
   </script>
 </body>
