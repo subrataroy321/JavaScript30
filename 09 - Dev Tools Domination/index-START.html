@@ -18,29 +18,72 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('Hello, I am %s', '💩') // %s is a in-line string variable.
 
     // Styled
+    console.log('%c I am some great text', 'font-size:50px; background:red; text-shadow: 10px 10px 0 blue') // %c is a in-line styling variable.
 
     // warning!
+    console.warn('Error')
 
     // Error :|
+    console.error('Shit!')
 
     // Info
+    console.info('Do Crocodiles poop ?')
 
     // Testing
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'Something wrong!')
 
     // clearing
+    //console.clear()
 
     // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
 
     // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`This is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
-
+    console.count('You')
+    console.count('Me')
+    console.count('Me')
+    console.count('Me')
+    console.count('You')
+    console.count('Me')
+    console.count('You')
+    console.count('You')
+    console.count('Me')
+    console.count('You')
+    console.count('Me')
+    console.count('Me')
+    console.count('You')
+    console.count('Me')
+    console.count('Me')
+    console.count('Me')
     // timing
 
+    console.time('fetching data');
+    fetch('https://api.github.com/users/subrataroy321')
+    .then(res => res.json())
+    .then(data => {
+      console.timeEnd('fetching data')
+      console.log(data)
+    })
+
+    console.table(dogs);
+    
   </script>
 </body>
 </html>
