@@ -49,6 +49,23 @@
       font-weight: 200;
       border-left: 1px solid #D1E2FF;
     }
+
+    .buttons {
+      text-align: center;
+    }
+
+    .buttons button {
+      font-size: 20px;
+      height: 50px;
+      width: 150px;
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+      margin-left: 20px;
+      margin-right: 20px;
+      border: 0px;
+      font-family:'helvetica neue';
+
+    }
+
   </style>
    <!--
    The following is a common layout you would see in an email client.
@@ -94,6 +111,10 @@
       <p>Don't forget to tweet your result!</p>
     </div>
   </div>
+  <div class="buttons">
+    <button onclick="checkAll()">Select All</button>
+    <button onclick="uncheckAll()">Deselect All</button>
+  </div>
 
 <script>
 
@@ -123,6 +144,20 @@ function handleCheck(e) {
 checkboxes.forEach(checkbox => {
   checkbox.addEventListener('click', handleCheck)
 });
+
+function checkAll() {
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = true;
+  })
+  
+}
+
+function uncheckAll() {
+  checkboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  })
+}
+
 </script>
 </body>
 </html>
