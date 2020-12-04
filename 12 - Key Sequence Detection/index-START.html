@@ -7,6 +7,19 @@
 </head>
 <body>
 <script>
+  let keyArray = []
+  const secretCode = 'wesbos'
+
+  window.addEventListener('keyup', (e) => {
+    keyArray.push(e.key)
+    keyArray.splice(-secretCode.length - 1, keyArray.length - secretCode.length)
+    console.log(keyArray)
+    if (keyArray.join('') == 'wesbos') {
+      console.log('You got the secret word!')
+      cornify_add();
+    }
+  });
+
 </script>
 </body>
 </html>
